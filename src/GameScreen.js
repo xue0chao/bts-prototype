@@ -21,38 +21,43 @@ const GameScreen = function({ data }) {
         });
     }
 
-    //placeholder until there's smarter CSS
-    const IMAGE_SHRINK_FACTOR = 0.5;
-    const BACKGROUND_WIDTH = 1792;
-    const BACKGROUND_HEIGHT = 2699;
-    const CHARACTER_WIDTH = 1000;
-    const CHARACTER_HEIGHT = 2000;
-
     const gameScreenStyle = {
+        margin: 0,
+        padding: 0,
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundImage: `url(${process.env.PUBLIC_URL}/${gameState.backgroundImage})`,
-        backgroundSize: `${BACKGROUND_HEIGHT * IMAGE_SHRINK_FACTOR}px ${BACKGROUND_WIDTH * IMAGE_SHRINK_FACTOR}px`,
-        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        textAlign: 'center',
-        width: `${BACKGROUND_WIDTH * IMAGE_SHRINK_FACTOR}px`,
-        height: `${BACKGROUND_HEIGHT * IMAGE_SHRINK_FACTOR}px`
+        backgroundPosition: 'center center',
+        backgroundSize: 'contain'
     };
 
     const characterContainerStyle = {
         backgroundImage: `url(${process.env.PUBLIC_URL}/${gameState.characterImage})`,
-        backgroundSize: `${CHARACTER_HEIGHT * IMAGE_SHRINK_FACTOR}px ${CHARACTER_WIDTH * IMAGE_SHRINK_FACTOR}px`,
+        margin: '0 0 30% 0',
+        width: '80%',
+        height: '80%',
         backgroundRepeat: 'no-repeat',
-        width: `${CHARACTER_WIDTH * IMAGE_SHRINK_FACTOR}px`,
-        height: `${CHARACTER_HEIGHT * IMAGE_SHRINK_FACTOR}px`,
-        position: 'relative',
-        marginRight: '0px'
+        backgroundPosition: 'right top',
+        backgroundSize: 'contain'
+    };
+
+    const characterLabelStyle = {
+        position: 'absolute',
+        marginRight: '10%'
     };
 
     return (
         <div id="game-screen" style={gameScreenStyle}>
             {
                 !!gameState.characterImage ?
-                <div id="character-image-container" style={characterContainerStyle}></div> : null
+                <div id="character-image-container" style={characterContainerStyle}>
+                    <div id="character-label" style={characterLabelStyle}>
+                        {gameState.prompt.label}
+                    </div>
+                </div> : null
             }
             {
                 gameState.screenType === 'CHOICE' ?

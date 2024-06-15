@@ -8,7 +8,9 @@
             "content": {
                 "text": "At the main house, SUGA is recuperating while the rest of the boys talk quietly in the living room.",
                 "style": {
-                    "fontStyle": "italic"
+                    "fontStyle": "italic",
+                    "fontSize": "xx-large",
+                    "textAlign": "left"
                 }
             },
             "nextScreen": "two"
