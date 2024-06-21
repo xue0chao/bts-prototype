@@ -1,0 +1,57 @@
+{
+    "initial": {
+        "assets": {
+            "backgroundImage": "background_example.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "At the main house, SUGA is recuperating while the rest of the boys talk quietly in the living room.",
+                "style": {
+                    "fontStyle": "italic",
+                    "textAlign": "left"
+                    
+                }
+            },
+            "nextScreen": "two"
+        }
+    },
+    "two": {
+        "assets": {
+            "backgroundImage": "background_example.png",
+            "characterImage": "character_example.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "label": "Jimin",
+            "content": {
+                "text": "But how are we going to find our soulmate? They could be anywhere...",
+                "style": {}
+            },
+            "nextScreen": "three"
+        }
+    },
+    "three": {
+        "assets": {
+            "backgroundImage": "background_example.png",
+            "characterImage": "character_example.png"
+        },
+        "type": "CHOICE",
+        "prompt": {
+            "question": "Dad: Are you excited for the show?",
+            "choices": [{
+                "id": 1,
+                "text": "I'm just worried about the boys' health...",
+                "screen": "initial"
+            }, {
+                "id": 2,
+                "text": "I don't want the show to get canceled.",
+                "screen": "two"
+            }, {
+                "id": 3,
+                "text": "I know the boys will pull through no matter what.",
+                "screen": "three"
+            }]
+        }
+    }
+}
