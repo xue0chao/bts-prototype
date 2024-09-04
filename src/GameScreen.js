@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Choice from './screens/Choice';
 import Dialog from './screens/Dialog';
+import Exposition from './screens/Exposition';
 import './GameScreen.css';
 
 const GameScreen = function({ data }) {   
     const initialState = {
         backgroundImage: data.initial.assets.backgroundImage,
         characterImage: null,
+        speakerLabel: null,
         screenType: data.initial.type,
         prompt: data.initial.prompt
     };
@@ -16,6 +18,7 @@ const GameScreen = function({ data }) {
         setGameState({
             backgroundImage: data[newStateName].assets.backgroundImage,
             characterImage: data[newStateName].assets.characterImage,
+            speakerLabel: data[newStateName].assets.speakerLabel,
             screenType: data[newStateName].type,
             prompt: data[newStateName].prompt
         });
@@ -26,8 +29,8 @@ const GameScreen = function({ data }) {
         padding: 0,
         height: '100vh',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        //justifyContent: 'center',
+        //alignItems: 'center',
         backgroundImage: `url(${process.env.PUBLIC_URL}/${gameState.backgroundImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center top',
@@ -35,12 +38,15 @@ const GameScreen = function({ data }) {
     };
 
     const characterContainerStyle = {
+        position: 'absolute',
         backgroundImage: `url(${process.env.PUBLIC_URL}/${gameState.characterImage})`,
-        margin: '0 0 0 0',
+        //margin: 0,
         width: '80%',
         height: '80%',
+        top: '155px',
+        right: '0px',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'right center',
+        //backgroundPosition: 'right center',
         backgroundSize: 'contain'
     };
 
@@ -52,25 +58,23 @@ const GameScreen = function({ data }) {
     return (
         <div id="game-screen" style={gameScreenStyle}>
             {
-                !!gameState.characterImage ?
-                <div id="character-image-container" style={characterContainerStyle}>
-                    {/*<div id="character-label" style={characterLabelStyle}>
-                        {gameState.prompt.label}
-                    </div>*/}
-                </div> : null
-            }
-            {
                 gameState.screenType === 'CHOICE' ?
                 <Choice 
                     prompt={gameState.prompt} 
                     updateGameState={updateGameState}
-                /> : <Dialog 
+                /> : gameState.screenType === 'DIALOG' ?
+                 <Dialog 
                     prompt={gameState.prompt} 
                     updateGameState={updateGameState}
                 />
+                : <Exposition 
+                prompt={gameState.prompt} 
+                updateGameState={updateGameState}
+            />
             }
         </div>
     );
 };
 
 export default GameScreen;
+

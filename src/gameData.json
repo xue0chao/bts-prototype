@@ -1,16 +1,16 @@
 {
     "initial": {
         "assets": {
-            "backgroundImage": "background_example.png"
+            "backgroundImage": "HleaningD.png"
         },
         "type": "EXPOSITION",
         "prompt": {
             "content": {
-                "text": "At the main house, SUGA is recuperating while the rest of the boys talk quietly in the living room.",
+                "text": "Hermione stared at the slumped-over figure of the Death Eater. ",
                 "style": {
                     "fontStyle": "italic",
+                    "fontSize": "large",
                     "textAlign": "left"
-                    
                 }
             },
             "nextScreen": "two"
@@ -18,15 +18,17 @@
     },
     "two": {
         "assets": {
-            "backgroundImage": "background_example.png",
-            "characterImage": "character_example.png"
+            "backgroundImage": "zoominD.png"
         },
-        "type": "DIALOG",
+        "type": "EXPOSITION",
         "prompt": {
-            "label": "Jimin",
             "content": {
-                "text": "But how are we going to find our soulmate? They could be anywhere...",
-                "style": {}
+                "text": "The Cruciatus Curse had worn off him, but his body still shuddered and jerked with post-Cruciatus convulsions.",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "left"
+                }
             },
             "nextScreen": "three"
         }
