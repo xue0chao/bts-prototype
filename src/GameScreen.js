@@ -10,7 +10,8 @@ const GameScreen = function({ data }) {
         characterImage: null,
         speakerLabel: null,
         screenType: data.initial.type,
-        prompt: data.initial.prompt
+        prompt: data.initial.prompt,
+        side: null
     };
     const [gameState, setGameState] = useState(initialState);
 
@@ -20,7 +21,8 @@ const GameScreen = function({ data }) {
             characterImage: data[newStateName].assets.characterImage,
             speakerLabel: data[newStateName].assets.speakerLabel,
             screenType: data[newStateName].type,
-            prompt: data[newStateName].prompt
+            prompt: data[newStateName].prompt,
+            side:data[newStateName].side
         });
     }
 
@@ -66,6 +68,7 @@ const GameScreen = function({ data }) {
                  <Dialog 
                     prompt={gameState.prompt} 
                     updateGameState={updateGameState}
+                    side={gameState.side}
                 />
                 : <Exposition 
                 prompt={gameState.prompt} 
