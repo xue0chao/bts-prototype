@@ -7,22 +7,23 @@ import './GameScreen.css';
 const GameScreen = function({ data }) {   
     const initialState = {
         backgroundImage: data.initial.assets.backgroundImage,
-        characterImage: null,
-        speakerLabel: null,
+        characterImage: data.initial.assets.characterImage,
+        speakerLabel: data.initial.assets.speakerLabel,
         screenType: data.initial.type,
         prompt: data.initial.prompt,
-        side: null
+        nextScreen: data.initial.prompt.nextScreen || null,
     };
     const [gameState, setGameState] = useState(initialState);
 
     function updateGameState(newStateName) {
+        const newState = data[newStateName];
         setGameState({
-            backgroundImage: data[newStateName].assets.backgroundImage,
-            characterImage: data[newStateName].assets.characterImage,
-            speakerLabel: data[newStateName].assets.speakerLabel,
-            screenType: data[newStateName].type,
-            prompt: data[newStateName].prompt,
-            side:data[newStateName].side
+            backgroundImage: newState.assets.backgroundImage,
+            characterImage: newState.assets.characterImage,
+            speakerLabel: newState.assets.speakerLabel,
+            screenType: newState.type,
+            prompt: newState.prompt,
+            nextScreen: newState.prompt.nextScreen || null,
         });
     }
 
@@ -31,8 +32,6 @@ const GameScreen = function({ data }) {
         padding: 0,
         height: '100vh',
         display: 'flex',
-        //justifyContent: 'center',
-        //alignItems: 'center',
         backgroundImage: `url(${process.env.PUBLIC_URL}/${gameState.backgroundImage})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center top',
@@ -42,13 +41,11 @@ const GameScreen = function({ data }) {
     const characterContainerStyle = {
         position: 'absolute',
         backgroundImage: `url(${process.env.PUBLIC_URL}/${gameState.characterImage})`,
-        //margin: 0,
         width: '80%',
         height: '80%',
         top: '155px',
         right: '0px',
         backgroundRepeat: 'no-repeat',
-        //backgroundPosition: 'right center',
         backgroundSize: 'contain'
     };
 
@@ -66,18 +63,17 @@ const GameScreen = function({ data }) {
                     updateGameState={updateGameState}
                 /> : gameState.screenType === 'DIALOG' ?
                  <Dialog 
-                    prompt={gameState.prompt} 
+                    dialogs={gameState.prompt.dialogs} 
                     updateGameState={updateGameState}
-                    side={gameState.side}
+                    nextScreen={gameState.nextScreen}
                 />
                 : <Exposition 
-                prompt={gameState.prompt} 
-                updateGameState={updateGameState}
-            />
+                    prompt={gameState.prompt} 
+                    updateGameState={updateGameState}
+                />
             }
         </div>
     );
 };
 
 export default GameScreen;
-

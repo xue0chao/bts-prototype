@@ -23,7 +23,7 @@
         "type": "EXPOSITION",
         "prompt": {
             "content": {
-                "text": "The Cruciatus Curse had worn off, but his body was still jerking and shuddering.",
+                "text": "She stared down at the Death Eater who had been tortured. He was still trembling and clenching himself in his bindings.",
                 "style": {
                     "fontStyle": "italic",
                     "fontSize": "large",
@@ -35,253 +35,46 @@
     },
     "three": {
         "assets": {
-            "backgroundImage": "Rdismiss.png"
+          "backgroundImage": "Rdismiss.png"
         },
         "type": "DIALOG",
-        "side": "right",
         "prompt": {
-            "label": "Ron",
-            "content": {
+          "dialogs": [
+            {
+              "label": "Ron",
+              "side": "right",
+              "content": {
                 "text": "So this is the man that Dolohov used Crucio on.",
                 "style": {
-                    "fontSize": "large",
+                  "fontSize": "medium",
+                  "textAlign": "center"
+                }
+              }
+            },
+            {
+                "label": "Ron",
+                "side": "left",
+                "content": {
+                  "text": "So this is the man that Dolohov used Crucio on.",
+                  "style": {
+                    "fontSize": "medium",
                     "textAlign": "center"
+                  }
                 }
-            },
-            "nextScreen": "four"
-        }
-    },
-    "four": {
-        "assets": {
-            "backgroundImage": "Rdismiss.png"
-        },
-        "type": "DIALOG",
-        "side": "right",
-        "prompt": {
-            "label": "Ron",
-            "content": {
-                "text": "What did he do to get betrayed by his own people?",
-                "style": {
-                    "fontSize": "large",
+              },
+              {
+                "label": "Ron",
+                "side": "right",
+                "content": {
+                  "text": "So this is the man that Dolohov used Crucio on.",
+                  "style": {
+                    "fontSize": "medium",
                     "textAlign": "center"
+                  }
                 }
-            },
-            "nextScreen": "six"
+              }
+          ],
+          "nextScreen": "four"
         }
-    },
-    "six": {
-        "assets": {
-            "backgroundImage": "Rdismiss.png"
-        },
-        "type": "DIALOG",
-        "side": "right",
-        "prompt": {
-            "label": "Ron",
-            "content": {
-                "text": "Hermione, don't let your guard down. This could be a trap!",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center"
-                }
-            },
-            "nextScreen": "seven"
-        }
-    },
-    "seven": {
-        "assets": {
-            "backgroundImage": "Rdismiss.png"
-        },
-        "type": "CHOICE",
-        "prompt": {
-            "question": "Hermione",
-            "choices": [
-                { "id": "choice1", "text": "He's not a danger to us in this state.", "screen": "eight" },
-                { "id": "choice2", "text": "We need to stay on our guard and tread carefully.", "screen": "nine" }
-            ]
-        }
-    },
-    "eight": {
-        "assets": {
-            "backgroundImage": "Ddisarmed.png"
-        },
-        "type": "DIALOG",
-        "side": "left",
-        "prompt": {
-            "label": "Hermione",
-            "content": {
-                "text": "A trap? Nonsense - he's not in any shape to attack us. Besides, Tonks disarmed him when she came through earlier.",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center"
-                }
-            },
-            "nextScreen": "ten"
-        }
-    },
-    "nine": {
-        "assets": {
-            "backgroundImage": "Hdoubting.png"
-        },
-        "type": "DIALOG",
-        "side": "left",
-        "prompt": {
-            "label": "Hermione",
-            "content": {
-                "text": "We'd better Petrificus him so we can be sure he's full restrained.",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center"
-                }
-            },
-            "nextScreen": "eleven"
-        }
-    },
-    "ten": {
-        "assets": {
-            "backgroundImage": "ron_armraised.png"
-        },
-        "type": "DIALOG",
-        "side": "right",
-        "prompt": {
-            "label": "Ron",
-            "content": {
-                "text": "Sure, Tonks got his wand, but he's still got arms hasn't he? When did we ever trust a Death Eater?",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center"
-                }
-            },
-            "nextScreen": "twelve"
-        }
-    },
-    "eleven": {
-        "assets": {
-            "backgroundImage": "H_petrificus.png"
-        },
-        "type": "DIALOG",
-        "side": "left",
-        "prompt": {
-            "label": "Hermione",
-            "content": {
-                "text": "Petrificus Partialis!",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center"
-                }
-            },
-            "nextScreen": "fifteen"
-        }
-    },
-    "twelve": {
-        "assets": {
-            "backgroundImage": "Hdoubting.png"
-        },
-        "type": "DIALOG",
-        "side": "left",
-        "prompt": {
-            "label": "Hermione",
-            "content": {
-                "text": "If he tried to punch me, I'm pretty sure I could take him.",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center"
-                }
-            },
-            "nextScreen": "thirteen"
-        }
-    },
-    "thirteen": {
-        "assets": {
-            "backgroundImage": "Hdoubting.png"
-        },
-        "type": "DIALOG",
-        "side": "left",
-        "prompt": {
-            "label": "Hermione",
-            "content": {
-                "text": "Ron, we really need you help Tonks get Dolohov back to Headquarters for questioning, before he wakes up. I'll finish up here and meet you back at base?",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center",
-                    "fontStyle": "italic"
-                }
-            },
-            "nextScreen": "forteen"
-        }
-    },
-    "forteen": {
-        "assets": {
-            "backgroundImage": "Ron_armscrossed.png"
-        },
-        "type": "DIALOG",
-        "side": "right",
-        "prompt": {
-            "label": "Ron",
-            "content": {
-                "text": "I'm not happy about this, but I agree that Dolohov's the priority. Just be careful, Hermione.",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center",
-                    "fontStyle": "italic"
-                }
-            },
-            "nextScreen": "seven"
-        }
-    },
-    "fifteen": {
-        "assets": {
-            "backgroundImage": "D_closeuppain.png"
-        },
-        "type": "EXPOSITION",
-        "prompt": {
-            "content": {
-                "text": "The Death Eater's body suddenly tensed upright as Petrificus shot through him. Hermione heard a pained gasp from underneath the hood.",
-                "style": {
-                    "fontStyle": "italic",
-                    "fontSize": "large",
-                    "textAlign": "center"
-                }
-            },
-            "nextScreen": "sixteen"
-        }
-    },
-    "sixteen": {
-        "assets": {
-            "backgroundImage": "Ron_armscrossed.png"
-        },
-        "type": "DIALOG",
-        "prompt": {
-            "label": "Ron",
-            "side": "right",
-            "content": {
-                "text": "Hmph. Disarmed, Crucio'd, and Petrificus'd - I almost feel bad for the bloke... Almost.",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center",
-                    "fontStyle": "italic"
-                }
-            },
-            "nextScreen": "seventeen"
-        }
-    },
-    "seventeen": {
-        "assets": {
-            "backgroundImage": "Ron_armscrossed.png"
-        },
-        "type": "DIALOG",
-        "side": "right",
-        "prompt": {
-            "label": "Ron",
-            "content": {
-                "text": "Well, I need to help Tonks get Dolohov back to Headquarters for questioning. I'll leave you alone with this one?",
-                "style": {
-                    "fontSize": "large",
-                    "textAlign": "center",
-                    "fontStyle": "italic"
-                }
-            },
-            "nextScreen": "seven"
-        }
+      }
     }
-
-}

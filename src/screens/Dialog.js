@@ -1,53 +1,65 @@
 import React from 'react';
 
-const Dialog = function({ prompt, updateGameState, side }) {
+const Dialog = function({ dialogs = [], updateGameState, nextScreen }) {
     const containerStyle = {
         display: 'flex',
-        flexDirection: 'column', // Stack elements vertically
-        alignItems: side === 'left' ? 'flex-start' : 'flex-end', // Align to the left or right
+        flexDirection: 'column',
         position: 'absolute',
-        bottom: '0px', // Keep the container at the bottom of the screen
-        left: side === 'left' ? '0px' : 'auto', // Align container to the left or right
-        right: side === 'right' ? '0px' : 'auto',
-        marginLeft: side === 'left' ? '20px' : 'auto', // Add margin for the left side
-        marginRight: side === 'right' ? '20px' : 'auto', // Add margin for the right side
-        width: '100%', // Ensure the container takes the full width
+        bottom: '0px',
+        width: '100%',
     };
 
-    const labelStyle = {
-        backgroundColor: 'rgba(255, 255, 255, 0.9)', // Semi-transparent background
-        borderRadius: '5px',
-        border: '5px solid black', // Solid black border
-        textAlign: 'center', // Center text horizontally
-        padding: '5px',
-        marginBottom: '10px', // Adds space between the label and the dialog box
-    };
-
-    const dialogBoxStyle = {
-        position: 'relative', // Set relative positioning
-        backgroundColor: 'rgba(255, 255, 255, 0.9)', // Semi-transparent background
-        borderRadius: '5px',
-        border: '5px solid black', // Solid black border
-        textAlign: 'center', // Center text horizontally within the dialog box
+    const labelContainerStyle = (side) => ({
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        textAlign: 'left',
         padding: '0px',
-        width: '33vw', // Set width to 1/3 of the screen
-        overflowWrap: 'break-word', // Handle long words without breaking the layout
-        boxSizing: 'border-box', // Ensure padding and border are included in the width
-        cursor: 'pointer' // Add cursor pointer to indicate it's clickable
+        marginBottom: '0px', // Space between label and dialog box
+        width: 'fit-content', // Adjust width to fit content
+        marginLeft: side === 'left' ? '20px' : 'auto',
+        marginRight: side === 'right' ? '20px' : 'auto',
+        alignSelf: side === 'left' ? 'flex-start' : 'flex-end', // Align based on side
+    });
+
+    const dialogContainerStyle = {
+        display: 'flex',
+        flexDirection: 'column', // Stack the label and dialog box vertically
+        alignItems: 'flex-start', // Align items to the start of the container
+        marginLeft: '20px', // Align with the dialog box
+        marginBottom: '10px', // Space below the dialog container
     };
 
+    const dialogBoxStyle = (side) => ({
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        borderRadius: '5px',
+        border: '5px solid black',
+        textAlign: 'center',
+        padding: '0px',
+        width: '33vw',
+        overflowWrap: 'break-word',
+        boxSizing: 'border-box',
+        cursor: 'pointer',
+        marginLeft: side === 'left' ? '20px' : 'auto',
+        marginRight: side === 'right' ? '20px' : 'auto',
+        alignSelf: side === 'left' ? 'flex-start' : 'flex-end', // Align based on side
+    });
+
+    // Function to navigate to the next screen when the container is clicked
     function goToNextScreen() {
-        updateGameState(prompt.nextScreen);
+        updateGameState(nextScreen);
     }
 
     return (
         <div id="dialog-container" style={containerStyle} onClick={goToNextScreen}>
-            <div className="label-container" style={labelStyle}>
-                {prompt.label}
-            </div>
-            <div className="dialog-box" style={dialogBoxStyle}>
-                <p style={prompt.content.style}>{prompt.content.text}</p>
-            </div>
+            {dialogs.map((prompt, index) => (
+                <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: prompt.side === 'left' ? 'flex-start' : 'flex-end' }}>
+                    <div style={labelContainerStyle(prompt.side)}>
+                        {prompt.label}
+                    </div>
+                    <div className="dialog-box" style={dialogBoxStyle(prompt.side)}>
+                        <p style={prompt.content.style}>{prompt.content.text}</p>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 };
