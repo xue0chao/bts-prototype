@@ -12,6 +12,7 @@ const Dialog = function({ dialogs = [], updateGameState, nextScreen }) {
     const labelContainerStyle = (side) => ({
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
         textAlign: 'left',
+        fontStyle: 'italic',
         padding: '0px',
         marginBottom: '0px', // Space between label and dialog box
         width: 'fit-content', // Adjust width to fit content
@@ -31,7 +32,7 @@ const Dialog = function({ dialogs = [], updateGameState, nextScreen }) {
     const dialogBoxStyle = (side) => ({
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
         borderRadius: '5px',
-        border: '5px solid black',
+        border: '1px solid grey',
         textAlign: 'center',
         padding: '0px',
         width: '33vw',

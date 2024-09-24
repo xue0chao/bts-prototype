@@ -23,7 +23,7 @@
         "type": "EXPOSITION",
         "prompt": {
             "content": {
-                "text": "She stared down at the Death Eater who had been tortured. He was still trembling and clenching himself in his bindings.",
+                "text": "Someone had clearly used Crucio on him. Even unconscious, he was still trembling and clenching himself in his bindings. ",
                 "style": {
                     "fontStyle": "italic",
                     "fontSize": "large",
@@ -44,7 +44,7 @@
               "label": "Ron",
               "side": "right",
               "content": {
-                "text": "So this is the man that Dolohov used Crucio on.",
+                "text": "So this is the Death Eater that Dolohov tortured.",
                 "style": {
                   "fontSize": "medium",
                   "textAlign": "center"
@@ -53,9 +53,9 @@
             },
             {
                 "label": "Ron",
-                "side": "left",
+                "side": "right",
                 "content": {
-                  "text": "So this is the man that Dolohov used Crucio on.",
+                  "text": "Why'd the other Death Eaters turn on him?",
                   "style": {
                     "fontSize": "medium",
                     "textAlign": "center"
@@ -66,7 +66,7 @@
                 "label": "Ron",
                 "side": "right",
                 "content": {
-                  "text": "So this is the man that Dolohov used Crucio on.",
+                  "text": "Hermione, don't let your guard down. This could be a trap!",
                   "style": {
                     "fontSize": "medium",
                     "textAlign": "center"
@@ -76,5 +76,437 @@
           ],
           "nextScreen": "four"
         }
-      }
+      },
+      "four": {
+        "assets": {
+            "backgroundImage": "Rdismiss.png"
+        },
+        "type": "CHOICE",
+        "prompt": {
+            "question": "Hermione",
+            "choices": [
+                { "id": "choice1", "text": "He's in pain - we should help.", "screen": "five" },
+                { "id": "choice2", "text": "We need to stay on our guard and tread carefully.", "screen": "six" }
+            ]
+        }
+    },
+    "five": {
+        "assets": {
+            "backgroundImage": "Ddisarmed.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "A trap? Nonsense - he's not in any shape to attack us.",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": " Besides, Tonks disarmed him when she came through earlier.",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }
+            ],
+            "nextScreen": "seven"
+            }
+        },
+    "six": {
+        "assets": {
+            "backgroundImage": "Hdoubting.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "I don't trust him..",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "We need him to stay unconscious until we've searched his body for hidden weapons.",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }
+
+            ],
+            "nextScreen": "eleven"
+            }
+        },
+    "seven": {
+        "assets": {
+            "backgroundImage": "ron_armraised.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Ron",
+                    "side": "right",
+                    "content": {
+                        "text": "Sure, Tonks got his wand, but he's still got arms hasn't he?",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "label": "Ron",
+                    "side": "right",
+                    "content": {
+                        "text": "Since when did we start trusting Death Eaters?",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }    
+            ],
+            "nextScreen": "eight"
+            }
+        },
+    "eight": {
+        "assets": {
+            "backgroundImage": "Hdoubting.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "Ron, don't be heartless. Nobody deserves this, not even a Death Eater.",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }
+            ],
+            "nextScreen": "nine"
+            }
+    },
+    "nine": {
+        "assets": {
+            "backgroundImage": "H_petrificus.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "*Healing spell*",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }
+            ],
+            "nextScreen": "ten"
+            }
+    },
+    "ten": {
+        "assets": {
+            "backgroundImage": "D_spellhitting.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "The man let out a small moan of relief. His shaking stopped and they watched his limbs sag.",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "center"
+                }
+            },
+            "nextScreen": "twelve"
+        }
+    },                   
+    "eleven": {
+        "assets": {
+            "backgroundImage": "D_inpainclenched.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "The Death Eater let out a small moan of pain, his body swaying slightly. As he shifted, a moonbeam suddenly caught and illuminated the outline of his slender face.",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "center"
+                }
+            },
+            "nextScreen": "twelve"
+        }
+    },
+    "twelve": {
+        "assets": {
+            "backgroundImage": "Ron_armscrossed.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "Ron, you'd better go bring Dolohov back to headquarters for questioning. I'll finish up here by myself.",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "label": "Ron",
+                    "side": "right",
+                    "content": {
+                        "text": "And leave you alone with *him*?",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                },
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "Don't worry about me, this won't take more than ten minutes. You need to get Dolohov out of here, before he wakes up.",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }
+            ],
+            "nextScreen": "thirteen"
+            }
+    },
+    "thirteen": {
+        "assets": {
+            "backgroundImage": "H_turnback.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "Ron squeezed Hermione's shoulder and left out the back. Hermione turned back to the Death Eater and sighed.",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "center"
+                }
+            },
+            "nextScreen": "forteen"
+        }
+    },  
+    "forteen": {
+        "assets": {
+            "backgroundImage": "H_castingR.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "*Revelio!*",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }
+            ],
+            "nextScreen": "fifteen"
+            }
+    },
+    "fifteen": {
+        "assets": {
+            "backgroundImage": "H_castingR.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "A blast of magic left Hermione's wand and swept like an electric wave through the Death Eater's body. The force of the spell created a small gust of wind, pushing the hood back from the figure's face...",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "center"
+                }
+            },
+            "nextScreen": "sixteen"
+        }
+    },  
+    "sixteen": {
+        "assets": {
+            "backgroundImage": "D_revealed.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "...",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "center"
+                }
+            },
+            "nextScreen": "seventeen"
+        }
+    },
+    "seventeen": {
+        "assets": {
+            "backgroundImage": "H_shocked.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "...",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }
+            ],
+            "nextScreen": "nineteen"
+            }
+    },
+    "eighteen": {
+        "assets": {
+            "backgroundImage": "H_shocked.png"
+        },
+        "type": "DIALOG",
+        "prompt": {
+            "dialogs": [
+                {
+                    "label": "Hermione",
+                    "side": "left",
+                    "content": {
+                        "text": "... Draco?",
+                        "style": {
+                            "fontSize": "medium",
+                            "textAlign": "center"
+                        }
+                    }
+                }
+            ],
+            "nextScreen": "nineteen"
+            }
+    },
+    "nineteen": {
+        "assets": {
+            "backgroundImage": "D_revealed.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "The pale blonde boy didn't seem to hear his own name. His eyes were closed, and cheeks were streaked as if he'd been crying.",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "center"
+                }
+            },
+            "nextScreen": "twenty"
+        }
+    },
+    "twenty": {
+        "assets": {
+            "backgroundImage": "D_revealed.png"
+        },
+        "type": "CHOICE",
+        "prompt": {
+            "question": "Hermione",
+            "choices": [
+                { "id": "choice1", "text": "Revive him.", "screen": "twentyone" },
+                { "id": "choice2", "text": "Search his body.", "screen": "twentytwo" }
+            ]
+        }
+    },
+    "twentyone": {
+        "assets": {
+            "backgroundImage": "D_revive1.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "The revive spell hit Draco squarely in the chest. ",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "center"
+                }
+            },
+            "nextScreen": "twentythree"
+        }
+    },
+    "twentythree": {
+        "assets": {
+            "backgroundImage": "D_revive2.png"
+        },
+        "type": "EXPOSITION",
+        "prompt": {
+            "content": {
+                "text": "His eyes flew open and he clutched his heart with a ragged gasp.",
+                "style": {
+                    "fontStyle": "italic",
+                    "fontSize": "large",
+                    "textAlign": "center"
+                }
+            },
+            "nextScreen": "twentyfour"
+        }
+    },
+    "twentyfour": {
+        "assets": {
+            "backgroundImage": "D_revive2.png"
+        },
+        "type": "CHOICE",
+        "prompt": {
+            "question": "Hermione",
+            "choices": [
+                { "id": "choice1", "text": "Are you OK? ", "screen": "twentyone" },
+                { "id": "choice2", "text": "Well well well, fancy seeing you here.", "screen": "twentytwo" }
+            ]
+        }
     }
+}
+
+
+

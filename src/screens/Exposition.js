@@ -15,7 +15,7 @@ const Exposition = function({ prompt, updateGameState }) {
         position: 'relative',
         backgroundColor: 'rgba(255, 255, 255, 0.9)', // Semi-transparent background
         borderRadius: '5px',
-        border: '5px solid black', // Solid black border
+        border: '1px solid black', // Solid black border
         textAlign: 'center', // Center text horizontally within the dialog box
         padding: '10px',
         width: 'fit-content', // Optional: Adjust width or use fit-content
